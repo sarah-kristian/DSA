@@ -20,7 +20,7 @@ public class AllMethods {
     LinkedList<String> lit = new LinkedList<>();
 
     //Insert Method
-    public void insertLinkedList(int nodeValue, int location) {
+    public void insertNode(int nodeValue, int location) {
         Node node = new Node();
         node.value = nodeValue;
 
@@ -37,29 +37,29 @@ public class AllMethods {
         }
 
     // Insert at end of list
-        if (location >= size) {
-            node.next = null;
+       else if (location >= size) {
             tail.next = node;
             tail = node;
         }
 
     // Insert in middle of list
-        // Start at head
-        Node tempNode = head;
+        else {
+            // Start at head
+            Node tempNode = head;
 
-        // traverse the list until you find the node just before target location
-        // tempNode will now point to the node before where you want to insert
-        int index = 0;
-        while (index < location - 1) {
-            tempNode = tempNode.next;
-            index++;
+            // traverse the list until you find the node just before target location
+            // tempNode will now point to the node before where you want to insert
+            int index = 0;
+            while (index < location - 1) {
+                tempNode = tempNode.next;
+                index++;
+            }
+
+            // insert node
+            Node nextNode = tempNode.next; //Save the original next of tempNode into nextNode
+            tempNode.next = node; // Point tempNode.next to your new node
+            node.next = nextNode; // Point your new node to nextNode
         }
-
-        // insert node
-        Node nextNode = tempNode.next; //Save the original next of tempNode into nextNode
-        tempNode.next = node; // Point tempNode.next to your new node
-        node.next = nextNode; // Point your new node to nextNode
-
         // update size
         size++;
     }
@@ -99,7 +99,7 @@ public class AllMethods {
     }
 
     //implement deleting a node from single linked list
-    public void deleteLinkedList(int location) {
+    public void deleteNode(int location) {
 
         // empty list (== no head)
         if (head == null) {

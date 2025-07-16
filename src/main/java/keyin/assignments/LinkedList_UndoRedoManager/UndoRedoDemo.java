@@ -1,4 +1,4 @@
-package keyin.assignments.DoublyLinkedList_UndoRedoManager;
+package keyin.assignments.LinkedList_UndoRedoManager;
 
 public class UndoRedoDemo {
     public static void main(String[] args) {

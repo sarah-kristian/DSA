@@ -1,4 +1,4 @@
-package keyin.assignments.DoublyLinkedList_UndoRedoManager;
+package keyin.assignments.LinkedList_UndoRedoManager;
 
 import java.util.NoSuchElementException;
 
